@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabeel Mohamed Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: bisque;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ff6600;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            animation: slideIn 1s ease-out;
+            width: 100%;
+        }
+
+        header h2 {
+            font-size: 3em;
+            animation: fadeIn 2s ease-in-out;
+            margin-right: 20px;
+        }
+
+        nav {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .links {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .links a {
+            color: #ff6600;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #ffcc00;
+        }
+
+        .section-box {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1.5s ease-out;
+            margin-bottom: 20px;
+        }
+
+        .about p, .education ul, .skills ul, .projects ol, .achievements ul, .certifications ul {
+            font-size: 1.1em;
+        }
+
+        h3, h4 {
+            color: #ff6600;
+            font-size: 2em;
+            border-bottom: 2px solid #ff6600;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #ff6600;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #ffcc00;
+        }
+
+        img {
+            border-radius: 10px;
+            border: 2px solid #ff6600;
+            width: 250px;
+            height: 200px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .project-description {
+            color: #666;
+            margin-top: -10px;
+        }
+
+        /* Mobile View Styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+            }
+
+            header h2 {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+            }
+
+            img {
+                width: 180px;
+                height: 180px;
+                margin-bottom: 15px;
+            }
+
+            nav a {
+                font-size: 1.1em;
+                margin: 0 10px;
+            }
+
+            .links a {
+                font-size: 1em;
+                margin: 0 8px;
+            }
+
+            .section-box {
+                width: 100%;
+                padding: 0 10px;
+            }
+
+            .box {
+                padding: 15px;
+            }
+
+            h3, h4 {
+                font-size: 1.8em;
+            }
+
+            footer p {
+                font-size: 1em;
+            }
+        }
+
+        /* Extra Small Mobile View */
+        @media (max-width: 480px) {
+            header h2 {
+                font-size: 2em;
+            }
+
+            nav a {
+                font-size: 1em;
+                margin: 0 5px;
+            }
+
+            .links a {
+                font-size: 0.9em;
+                margin: 0 5px;
+            }
+
+            .section-box {
+                padding: 0;
+            }
+
+            .box {
+                padding: 10px;
+            }
+
+            .project-description {
+                font-size: 1em;
+            }
+
+            footer p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h2>SABEEL MOHAMED</h2>
+            <img src="sabu18photo.jpg" alt="Sabeel Mohamed" style="border-radius: 100%;">
+        </header>
+
+        <nav>
+            <a href="#about-myself">About Myself</a> |
+            <a href="#education">Education</a> |
+            <a href="#skills">Skills</a> |
+            <a href="#projects">Projects</a> |
+            <a href="#achievements">Achievements</a> |
+            <a href="#contact">Contact</a> |
+            <a href="#certifications">Certifications</a>
+        </nav>
+
+        <div class="links">
+            <a href="https://www.linkedin.com/in/sabeelmohamed18">LinkedIn</a> |
+            <a href="https://www.codechef.com/users/sabeelmohamed">CodeChef</a> |
+            <a href="https://leetcode.com/u/SABEELMOHAMED/">LeetCode</a>
+        </div>
+
+        <div class="section-box">
+            <div class="box">
+                <h3 id="about-myself">ABOUT MYSELF</h3>
+                <p>I am a versatile software developer with a strong foundation in Java, SQL, and web development. Over the years, I have honed my problem-solving skills through active participation in various global coding platforms, where I consistently tackle complex challenges and enhance my coding efficiency. My technical expertise extends beyond coding, encompassing a comprehensive understanding of software architecture, database management, and user-centric design principles. In addition to my technical acumen, I possess strong leadership skills, demonstrated through successful project management and team collaboration. I thrive in dynamic environments where I can apply my analytical thinking to drive innovation and deliver impactful solutions. My proactive approach to learning ensures I stay updated with the latest industry trends and technologies, enabling me to contribute effectively to any development team.</p>
+            </div>
+
+            <div class="box">
+                <h4 id="education">EDUCATION</h4>
+                <ul>
+                    <li>NMCMS-10TH ALL PASS</li>
+                    <li>NMCMS-12TH 90%</li>
+                    <li>SECE 2ND YEAR CGPA 8.0</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-box">
+            <div class="box">
+                <h4 id="skills">SKILLS</h4>
+                <ul>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>C</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Data Structures & Algorithm</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4 id="projects">PROJECTS</h4>
+                <ol>
+                    <li>Online Learning Platform</li>
+                    <p class="project-description">The Online Learning Platform is a comprehensive console-based Java application designed to provide an interactive and user-friendly experience for both learners and instructors. The platform offers features like course registration, progress tracking, and quiz-taking, enabling users to engage with educational content seamlessly. Built using core Java concepts such as Classes, Inheritance, Polymorphism, Interfaces, and Exception Handling, the platform ensures robust functionality and efficient execution. File Handling and Multithreading enhance the user experience by managing data storage and simultaneous user interactions effectively. JDBC is utilized for database connectivity, supporting the backend operations and ensuring smooth data retrieval and storage. The platform tracks user progress through detailed enrollments, manages course structures with lessons and quizzes, and stores quiz results for performance analysis. This project demonstrates a deep understanding of software development principles and a commitment to delivering accessible, quality education through technology.</p>
+                    <li>ESP32-based indoor navigation bot</li>
+                    <p class="project-description">NaviBot is an innovative indoor navigation system designed to assist individuals with disabilities in navigating complex indoor spaces with ease and accuracy. This project utilizes the ESP32 microcontroller, leveraging its Bluetooth Low Energy (BLE) capabilities to detect and interact with BLE devices like the HM-10 module by identifying their unique MAC addresses. The bot tracks its relative position using real-time Received Signal Strength Indicator (RSSI) readings, enabling precise location mapping within indoor environments.</p>
+                    <li>Health insurance management system</li>
+                    <p class="project-description">The Health Insurance Management System is a robust Java-based application designed to streamline and automate various processes involved in managing health insurance policies. This system offers a comprehensive solution for policy management, claims processing, and customer record tracking, providing a seamless experience for both administrators and clients.</p>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section-box">
+            <div class="box">
+                <h4 id="certifications">CERTIFICATIONS</h4>
+                <ul>
+                    <li>Mastering Data structures & Algorithm - UDEMY</li>
+                    <li>C For Everyone: Programming Fundamentals - COURSERA</li>
+                    <li>Python zero to hero - GUVI</li>
+                    <li>HTML & CSS Crash Course - UDEMY</li>
+                    <li>Java Programming - UDEMY</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4 id="achievements">ACHIEVEMENTS</h4>
+                <ul>
+                    <li>Participated in a hackathon to design a mobile application assessing the suitability of coastal tourism sites in India</li>
+                    <li>Participated at Hack4change finale (hackathon event) held at New Delhi</li>
+                    <li>Solved 100+ problems on LeetCode</li>
+                    <li>Won 3rd prize in CODE FIESTA event held at SECE 2024</li>
+                    <li>Solved 250+ problems on skill-rack</li>
+                    <li>Silver badge for C in HackerRank</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <div class="18">
+            <h4 id="contact">CONTACT</h4>
+            <p>Email: <a href="mailto:sabeelmohamed.m2023ece@sece.ac.in">sabeelmohamed.m2023ece@sece.ac.in</a></p>
+            <p>Phone: 8946094723</p>
+            <p>Address: Coimbatore</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
