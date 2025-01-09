@@ -1,0 +1,452 @@
+body {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #077b32;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #055922;
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 0 20px;
+}
+
+.logo {
+    color: aliceblue;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: lightsteelblue;
+    text-shadow: 0 0 10px lightseagreen;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    position: relative;
+    font-size: 1.2rem;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 550;
+    transition: color 0.3s linear;
+}
+
+.links a::before {
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #077b32;
+    transition: width 0.2s linear;
+}
+
+.links a:hover::before {
+    width: 100%;
+}
+
+.links a:hover {
+    color: #077b32;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-container .image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 40px 10px lightsteelblue, 0 0 50px lightsteelblue;
+}
+
+.main-container .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-container .content {
+    color: white;
+    width: 50%;
+}
+
+.main-container .content h1 {
+    font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+}
+
+.main-container .content h1 span {
+    color: lightsteelblue;
+    text-shadow: 0 0 10px lightsteelblue;
+}
+
+.main-container .content p {
+    font-size: clamp(0.8rem, 1rem, 1.2rem);
+    margin: 10px 0;
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid lightsteelblue;
+    border-radius: 50%;
+    color: lightsteelblue;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: white;
+    background-color: lightsteelblue;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px lightsteelblue;
+}
+
+button {
+    margin: 30px 0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: lightsteelblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: transparent;
+    color: lightsteelblue;
+    border: 2px solid lightsteelblue;
+    box-shadow: 0 0 10px lightsteelblue;
+    transform: scale(1.1);
+}
+
+#about {
+    padding: 40px;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+
+#skills {
+    background-color: #2b2b2b;
+    color: white;
+    padding: 40px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 0 10px lightsteelblue;
+}
+
+.skill h3 {
+    font-size: 1.3rem;
+    color: lightsteelblue;
+}
+
+.skill p {
+    color: white;
+    font-size: 1rem;
+}
+
+
+.contact {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.contact .title {
+    font-size: 2rem;
+    color: lightsteelblue;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px lightsteelblue;
+}
+
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px lightsteelblue;
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: lightsteelblue;
+}
+
+.contact-form input, .contact-form textarea, .contact-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid lightsteelblue;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: lightsteelblue;
+    outline: none;
+}
+
+.contact-form button {
+    background-color: lightsteelblue;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: white;
+    color: lightsteelblue;
+    box-shadow: 0 0 10px lightsteelblue;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: black;
+    color: white;
+}
+
+footer a {
+    color: lightsteelblue;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+.projects {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.projects .title {
+    font-size: 2rem;
+    color: lightsteelblue;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px lightsteelblue;
+}
+
+.projects .project-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #2b2b2b;
+    border: 1px solid lightsteelblue;
+    border-radius: 8px;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 0 0 10px lightsteelblue;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px lightsteelblue;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    color: lightsteelblue;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.project-card a {
+    color: lightsteelblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+
+.project-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.project-card:hover .card-inner {
+    transform: rotateY(180deg); 
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 20px lightsteelblue;
+}
+
+.card-front {
+    background-color: #555;
+}
+
+.card-back {
+    background-color: lightsteelblue;
+    transform: rotateY(180deg); 
+    color: white;
+}
+
+.card-back a {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #077b32;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.card-back a:hover {
+    background-color: lightskyblue;
+    color: white;
+    box-shadow: 0 0 10px lightskyblue;
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-container .content {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-grid {
+        justify-content: center;
+    }
+}
