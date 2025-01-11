@@ -1,7 +1,7 @@
 body {
     width: 100%;
     height: auto;
-    background-color: black;
+    background-color: rgb(13, 1, 1); /* Dark background */
     overflow-x: hidden;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,17 +13,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: white;
+    background: black;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: lightblue;
+    background: #ff0000; /* Red */
     border-radius: 12px;
     transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: lightblue;
+    background: #b30000; /* Darker red */
 }
 
 nav {
@@ -37,14 +37,14 @@ nav {
 }
 
 .logo {
-    color: aliceblue;
+    color: white;
     font-size: 2rem;
     font-weight: bold;
 }
 
 .logo span {
-    color:lightblue;
-    text-shadow: 0 0 10px lightblue;
+    color: red; /* Red */
+    text-shadow: 0 0 10px #ff0000; /* Red glow */
 }
 
 .links {
@@ -55,10 +55,24 @@ nav {
 .links a {
     position: relative;
     font-size: 1.2rem;
-    color: aliceblue;
+    color: white;
     text-decoration: none;
     font-weight: 550;
-    transition: color 0.3s linear;
+    transition: color 0.3s linear, transform 0.3s ease;
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+}
+
+.links a:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.links a:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.links a:nth-child(3) {
+    animation-delay: 0.6s;
 }
 
 .links a::before {
@@ -68,7 +82,7 @@ nav {
     left: 0;
     width: 0%;
     height: 3px;
-    background-color: maroon;
+    background-color: #ff0000; /* Red */
     transition: width 0.2s linear;
 }
 
@@ -77,15 +91,23 @@ nav {
 }
 
 .links a:hover {
-    color: lightblue;
+    color: #ff0000; /* Red */
+    transform: scale(1.1);
 }
 
-/* Main Section */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .main-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out forwards;
 }
 
 .main-container .image {
@@ -93,7 +115,7 @@ nav {
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 0 40px 10px lightblue, 0 0 50px lightblue;
+    box-shadow: 0 0 40px 10px red, 0 0 50px red; /* Red glow */
 }
 
 .main-container .image img {
@@ -112,8 +134,8 @@ nav {
 }
 
 .main-container .content h1 span {
-    color: lightblue;
-    text-shadow: 0 0 10px lightblue;
+    color: red; /* Red */
+    text-shadow: 0 0 10px red; /* Red glow */
 }
 
 .main-container .content p {
@@ -135,48 +157,62 @@ nav {
     width: 3rem;
     height: 3rem;
     background-color: transparent;
-    border: 0.2rem solid lightblue;
+    border: 0.2rem solid red; /* Red */
     border-radius: 50%;
-    color: lightblue;
+    color: red; /* Red */
     font-size: 1.5rem;
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-    color: white;
-    background-color: lightblue;
     transform: scale(1.2);
-    box-shadow: 0 0 10px lightblue;
+    background-color: red; /* Red */
+    box-shadow: 0 0 15px red; /* Red */
+    color: white;
 }
 
 button {
     margin: 30px 0;
     padding: 10px 20px;
     font-size: 1rem;
-    background-color: lightblue;
+    background-color: red; /* Red */
     color: white;
     border: none;
     border-radius: 5px;
     font-weight: 700;
     transition: all 0.3s ease;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0px red; /* Red */
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px red; /* Red */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0px red; /* Red */
+    }
 }
 
 button:hover {
     background-color: transparent;
-    color: lightblue;
-    border: 2px solid lightblue;
-    box-shadow: 0 0 10px lightblue;
+    color: red; /* Red */
+    border: 2px solid red; /* Red */
+    box-shadow: 0 0 10px red; /* Red */
     transform: scale(1.1);
 }
 
-/* About Section */
 #about {
     padding: 40px;
     background-color: #1a1a1a;
     color: white;
 }
 
-/* Skills Section */
 #skills {
     background-color: #2b2b2b;
     color: white;
@@ -194,12 +230,17 @@ button:hover {
     padding: 20px;
     border-radius: 8px;
     width: 250px;
-    box-shadow: 0 0 10px lightblue;
+    box-shadow: 0 0 10px red; /* Red glow */
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: scale(1.05);
 }
 
 .skill h3 {
     font-size: 1.3rem;
-    color: lightblue;
+    color: red; /* Red */
 }
 
 .skill p {
@@ -207,7 +248,6 @@ button:hover {
     font-size: 1rem;
 }
 
-/* Contact Section */
 .contact {
     background-color: #1a1a1a;
     color: white;
@@ -217,9 +257,9 @@ button:hover {
 
 .contact .title {
     font-size: 2rem;
-    color: lightblue;
+    color: red; /* Red */
     margin-bottom: 20px;
-    text-shadow: 0 0 10px lightblue;
+    text-shadow: 0 0 10px red; /* Red glow */
 }
 
 .contact-form-container {
@@ -232,7 +272,7 @@ button:hover {
     background-color: #2b2b2b;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px lightblue;
+    box-shadow: 0 0 10px red; /* Red glow */
     width: 100%;
     max-width: 500px;
 }
@@ -241,26 +281,28 @@ button:hover {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: lightblue;
+    color: red; /* Red */
 }
 
 .contact-form input, .contact-form textarea, .contact-form button {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid lightblue;
+    border: 1px solid red; /* Red */
     border-radius: 5px;
     background-color: #1a1a1a;
     color: white;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .contact-form input:focus, .contact-form textarea:focus {
-    border-color: lightblue;
+    border-color: red; /* Red */
     outline: none;
+    background-color: #444;
 }
 
 .contact-form button {
-    background-color: lightblue;
+    background-color: red; /* Red */
     border: none;
     color: white;
     font-weight: bold;
@@ -270,10 +312,10 @@ button:hover {
 
 .contact-form button:hover {
     background-color: white;
-    color: lightblue;
-    box-shadow: 0 0 10px lightblue;
+    color: red; /* Red */
+    box-shadow: 0 0 10px red; /* Red */
 }
-/* Footer Section */
+
 footer {
     text-align: center;
     padding: 10px 0;
@@ -282,13 +324,14 @@ footer {
 }
 
 footer a {
-    color: lightblue;
+    color: red; /* Red */
     text-decoration: none;
 }
 
 footer a:hover {
     text-decoration: underline;
 }
+
 .projects {
     background-color: #1a1a1a;
     color: white;
@@ -298,9 +341,9 @@ footer a:hover {
 
 .projects .title {
     font-size: 2rem;
-    color: lightblue;
+    color: red; /* Red */
     margin-bottom: 20px;
-    text-shadow: 0 0 10px lightblue;
+    text-shadow: 0 0 10px red; /* Red glow */
 }
 
 .projects .project-grid {
@@ -312,22 +355,23 @@ footer a:hover {
 
 .project-card {
     background-color: #2b2b2b;
-    border: 1px solid lightblue;
+    border: 1px solid red; /* Red */
     border-radius: 8px;
     width: 250px;
     padding: 20px;
-    box-shadow: 0 0 10px lightblue;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px red; /* Red glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .project-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px lightblue;
+    box-shadow: 0 0 20px red; /* Red */
+    filter: brightness(1.1);
 }
 
 .project-card h3 {
     font-size: 1.5rem;
-    color: lightblue;
+    color: red; /* Red */
     margin-bottom: 10px;
 }
 
@@ -338,7 +382,7 @@ footer a:hover {
 }
 
 .project-card a {
-    color: lightblue;
+    color: red; /* Red */
     text-decoration: none;
     font-weight: bold;
 }
@@ -346,6 +390,7 @@ footer a:hover {
 .project-card a:hover {
     text-decoration: underline;
 }
+
 .project-grid {
     display: flex;
     gap: 20px;
@@ -367,46 +412,82 @@ footer a:hover {
 }
 
 .project-card:hover .card-inner {
-    transform: rotateY(180deg); 
+    transform: rotateY(180deg);
 }
 
 .card-front, .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; 
+    backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: #333;
+    background-color: black;
     border-radius: 8px;
-    box-shadow: 0 0 20px lightblue;
+    box-shadow: 0 0 20px red; /* Red glow */
 }
 
 .card-front {
-    background-color: #555;
+    background-color: #333;
 }
 
 .card-back {
-    background-color: lightblue;
-    transform: rotateY(180deg); 
+    background-color: red; /* Red */
+    transform: rotateY(180deg);
     color: white;
 }
 
 .card-back a {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #fff;
-    color: lightblue;
+    background-color: white;
+    color: red; /* Red */
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
 }
 
 .card-back a:hover {
-    background-color: lightblue;
+    background-color: darkred;
     color: white;
-    box-shadow: 0 0 10px lightblue;
+    box-shadow: 0 0 10px darkred;
     transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-container .content {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-grid {
+        justify-content: center;
+    }
 }
